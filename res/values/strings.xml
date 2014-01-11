@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_id">1414231085481831</string>
     <string name="app_name">Relaxis</string>
     <string name="action_settings">Settings</string>
-    <string name="facebook_login">Sign up with Facebook</string>
     <string name="email_login">Sign up with email</string>
     <string name="acc_login">I have an account</string>
 
