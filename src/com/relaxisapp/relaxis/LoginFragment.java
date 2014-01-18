@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.facebook.Session;
 import com.facebook.SessionState;
@@ -18,6 +19,7 @@ public class LoginFragment extends Fragment {
 	LoginButton fbAuthButton;
 	Button emailLoginButton;
 	Button accRegisterButton;
+	TextView heartRate;
 	
 	private Session.StatusCallback callback = new Session.StatusCallback() {
 	    @Override
@@ -48,6 +50,14 @@ public class LoginFragment extends Fragment {
 		accRegisterButton = (Button) view.findViewById(R.id.btn_accRegister);
 		
 		return view;
+	}
+	
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		
+		heartRate = (TextView) getActivity().findViewById(R.id.tv_heartRate);
+		heartRate.setVisibility(View.INVISIBLE);
 	}
 	
 	@Override
@@ -94,9 +104,11 @@ public class LoginFragment extends Fragment {
 	    if (state.isOpened()) {
 	    	emailLoginButton.setVisibility(View.INVISIBLE);
 	    	accRegisterButton.setVisibility(View.INVISIBLE);
+	    	heartRate.setVisibility(View.VISIBLE);
 	    } else if (state.isClosed()) {
 	    	emailLoginButton.setVisibility(View.VISIBLE);
 	    	accRegisterButton.setVisibility(View.VISIBLE);
+	    	heartRate.setVisibility(View.INVISIBLE);
 	    }
 	}
 	
