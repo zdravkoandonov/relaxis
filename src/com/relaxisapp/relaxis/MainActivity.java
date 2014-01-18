@@ -6,7 +6,7 @@ import android.view.Menu;
 
 public class MainActivity extends FragmentActivity {
 
-	private MainFragment mainFragment;
+	private LoginFragment mainFragment;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -14,14 +14,14 @@ public class MainActivity extends FragmentActivity {
 		
 		if (savedInstanceState == null) {
 			// Add the fragment on initial activity setup
-	        mainFragment = new MainFragment();
+	        mainFragment = new LoginFragment();
 	        getSupportFragmentManager()
 	        .beginTransaction()
 	        .add(android.R.id.content, mainFragment)
 	        .commit();
 		} else {
 			// Or set the fragment from restored state info
-	        mainFragment = (MainFragment) getSupportFragmentManager()
+	        mainFragment = (LoginFragment) getSupportFragmentManager()
 	        .findFragmentById(android.R.id.content);
 		}
 	}
