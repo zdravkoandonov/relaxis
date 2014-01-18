@@ -11,7 +11,7 @@
     tools:context=".MainActivity" >
 
     <com.facebook.widget.LoginButton
-        android:id="@+id/btn_auth"
+        android:id="@+id/btn_fbAuth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_fb" />
@@ -24,9 +24,9 @@
         android:text="@string/email_login" />
 
     <Button
-        android:id="@+id/btn_accLogin"
+        android:id="@+id/btn_accRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/acc_login" />
+        android:text="@string/acc_register" />
 
 </LinearLayout>

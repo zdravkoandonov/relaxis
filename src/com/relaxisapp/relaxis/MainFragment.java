@@ -15,8 +15,9 @@ import com.facebook.widget.LoginButton;
 
 public class MainFragment extends Fragment {
 	
+	LoginButton fbAuthButton;
 	Button emailLoginButton;
-	Button accLoginButton;
+	Button accRegisterButton;
 	
 	private Session.StatusCallback callback = new Session.StatusCallback() {
 	    @Override
@@ -31,6 +32,22 @@ public class MainFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 		uiHelper = new UiLifecycleHelper(getActivity(), callback);
 	    uiHelper.onCreate(savedInstanceState);
+	}
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+			ViewGroup container,
+			Bundle savedInstanceState) {
+		
+		View view = inflater.inflate(R.layout.activity_main, container, false);
+		
+		fbAuthButton = (LoginButton) view.findViewById(R.id.btn_fbAuth);
+		fbAuthButton.setFragment(this);
+		
+		emailLoginButton = (Button) view.findViewById(R.id.btn_emailLogin);
+		accRegisterButton = (Button) view.findViewById(R.id.btn_accRegister);
+		
+		return view;
 	}
 	
 	@Override
@@ -72,30 +89,14 @@ public class MainFragment extends Fragment {
 	    super.onSaveInstanceState(outState);
 	    uiHelper.onSaveInstanceState(outState);
 	}
-	
-	@Override
-	public View onCreateView(LayoutInflater inflater,
-			ViewGroup container,
-			Bundle savedInstanceState) {
-		
-		View view = inflater.inflate(R.layout.activity_main, container, false);
-		
-		LoginButton authButton = (LoginButton) view.findViewById(R.id.btn_auth);
-		authButton.setFragment(this);
-		
-		emailLoginButton = (Button) view.findViewById(R.id.btn_emailLogin);
-		accLoginButton = (Button) view.findViewById(R.id.btn_accLogin);
-		
-		return view;
-	}
 
 	private void onSessionStateChange(Session session, SessionState state, Exception exception) {
 	    if (state.isOpened()) {
 	    	emailLoginButton.setVisibility(View.INVISIBLE);
-	    	accLoginButton.setVisibility(View.INVISIBLE);
+	    	accRegisterButton.setVisibility(View.INVISIBLE);
 	    } else if (state.isClosed()) {
 	    	emailLoginButton.setVisibility(View.VISIBLE);
-	    	accLoginButton.setVisibility(View.VISIBLE);
+	    	accRegisterButton.setVisibility(View.VISIBLE);
 	    }
 	}
 	
