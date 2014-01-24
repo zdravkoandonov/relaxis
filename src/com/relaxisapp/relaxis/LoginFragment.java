@@ -57,7 +57,7 @@ public class LoginFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 		
 		heartRate = (TextView) getActivity().findViewById(R.id.tv_heartRate);
-		heartRate.setVisibility(View.INVISIBLE);
+//		heartRate.setVisibility(View.INVISIBLE);
 	}
 	
 	@Override
@@ -104,11 +104,11 @@ public class LoginFragment extends Fragment {
 	    if (state.isOpened()) {
 	    	emailLoginButton.setVisibility(View.INVISIBLE);
 	    	accRegisterButton.setVisibility(View.INVISIBLE);
-	    	heartRate.setVisibility(View.VISIBLE);
+//	    	heartRate.setVisibility(View.VISIBLE);
 	    } else if (state.isClosed()) {
 	    	emailLoginButton.setVisibility(View.VISIBLE);
 	    	accRegisterButton.setVisibility(View.VISIBLE);
-	    	heartRate.setVisibility(View.INVISIBLE);
+//	    	heartRate.setVisibility(View.INVISIBLE);
 	    }
 	}
 	

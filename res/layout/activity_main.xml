@@ -20,4 +20,43 @@
         android:layout_height="wrap_content"
         android:text="@string/heart_rate" />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button"
+        android:onClick="clickMe" />
+
+    <Button
+        android:id="@+id/ButtonConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonConnect" />
+    
+    <Button
+        android:id="@+id/ButtonDisconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonDisconnect" />
+
+    <EditText
+        android:id="@+id/labelHeartRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+    </EditText>
+    
+    <EditText
+        android:id="@+id/labelInstantSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/labelStatusMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/statusMessage" />
+
 </LinearLayout>

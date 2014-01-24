@@ -7,5 +7,9 @@
     <string name="email_login">Sign up with email</string>
     <string name="acc_register">I have an account</string>
     <string name="heart_rate">Heart rate</string>
+    <string name="button">Click me!</string>
+    <string name="buttonConnect">Connect</string>
+    <string name="buttonDisconnect">Disconnect</string>
+    <string name="statusMessage">Status message</string>
 
 </resources>
